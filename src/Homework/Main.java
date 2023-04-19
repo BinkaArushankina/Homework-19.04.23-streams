@@ -2,6 +2,8 @@ package Homework;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Main {
     public static void main(String[] args) {
         Main main = new Main();
@@ -25,8 +27,7 @@ public class Main {
     }
     //2)
     public long countWords(String input, String letter){
-        String[]words=input.split(" ");
-        return Arrays.stream(words).filter(w-> w.startsWith(letter)).count();
+        return Stream.of(input.split(" ")).filter(w-> w.startsWith(letter)).count();
     }
 
 
